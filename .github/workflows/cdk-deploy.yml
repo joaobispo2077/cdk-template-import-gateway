@@ -5,6 +5,7 @@ on:
   push:
     branches:
       - main
+      - release
       - develop
       - 'feature/**'
     paths:
@@ -57,9 +58,6 @@ jobs:
     name: CDK Deploy (dev)
     needs: verify
     runs-on: ubuntu-latest
-
-    # ✅ Deploy on any push that triggered this workflow
-    if: github.event_name == 'push'
 
     permissions:
       contents: read

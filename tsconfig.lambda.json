@@ -4,9 +4,9 @@
     "outDir": "lambda-dist",
     "module": "ES2020",
     "types": ["aws-lambda"],
-    "allowJs": true,         // inclui .js no programa
-    "checkJs": false,        // não type-check em .js
-    "declaration": false     // evita .d.ts para esse build
+    "allowJs": true,                  // include .js in the program
+    "checkJs": false,                  // no type-check in .js
+    "declaration": false                // avoid .d.ts for this build
   },
   "include": ["src/**/*"],
   "exclude": ["tests/**"]

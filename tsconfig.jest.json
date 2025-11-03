@@ -4,7 +4,10 @@
     "inlineSourceMap": false,          // ← TURN OFF inline maps
     "sourceMap":     false,            // ← TURN OFF any source maps
     "inlineSources": false,            // ← TURN OFF inlined sources
-    "isolatedModules": true            // ← per-file transpile only
+    "isolatedModules": true ,           // ← per-file transpile only,
+    "allowJs": true,                  // include .js in the program
+    "checkJs": false,                  // no type-check in .js
+    "declaration": false                // avoid .d.ts for this build
   },
   "include": ["tests/**/*.ts", "tests/**/*.js"]
 }

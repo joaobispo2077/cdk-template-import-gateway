@@ -1,0 +1,9 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "lambda-dist",
+    "module": "ES2020",           // lets esbuild tree-shake better
+    "types": ["aws-lambda"]
+  },
+  "include": ["src/**/*.ts"]
+}

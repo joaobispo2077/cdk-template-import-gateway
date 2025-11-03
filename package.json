@@ -10,6 +10,10 @@
     "test": "jest",
     "cdk": "cdk"
   },
+  "dependencies": {
+    "aws-cdk-lib": "2.215.0",
+    "constructs": "^10.0.0"
+  },
   "devDependencies": {
     "@types/jest": "^29.5.14",
     "@types/node": "22.7.9",
@@ -18,9 +22,5 @@
     "aws-cdk": "2.1031.1",
     "ts-node": "^10.9.2",
     "typescript": "~5.6.3"
-  },
-  "dependencies": {
-    "aws-cdk-lib": "2.215.0",
-    "constructs": "^10.0.0"
   }
 }

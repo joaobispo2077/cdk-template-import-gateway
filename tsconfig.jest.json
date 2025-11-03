@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.json",        // keep your normal settings…
+  "compilerOptions": {
+    "inlineSourceMap": false,          // ← TURN OFF inline maps
+    "sourceMap":     false,            // ← TURN OFF any source maps
+    "inlineSources": false,            // ← TURN OFF inlined sources
+    "isolatedModules": true            // ← per-file transpile only
+  },
+  "include": ["tests/**/*.ts"]
+}

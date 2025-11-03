@@ -9,5 +9,5 @@
     "declaration": false     // evita .d.ts para esse build
   },
   "include": ["src/**/*"],
-  "exclude": ["tests/**", "**/*.spec.ts", "**/*.test.ts"]
+  "exclude": ["tests/**"]
 }

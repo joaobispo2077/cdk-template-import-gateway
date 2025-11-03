@@ -6,5 +6,5 @@
     "inlineSources": false,            // ← TURN OFF inlined sources
     "isolatedModules": true            // ← per-file transpile only
   },
-  "include": ["tests/**/*.ts"]
+  "include": ["tests/**/*.ts", "tests/**/*.js"]
 }

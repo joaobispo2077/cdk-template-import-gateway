@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 'use strict';
 const http = require('../utils/http');
 const fetch = require('node-fetch');

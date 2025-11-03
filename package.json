@@ -20,6 +20,7 @@
 		"source-map-support": "^0.5.21"
 	},
 	"devDependencies": {
+		"@aws-sdk/client-ssm": "^3.922.0",
 		"@types/aws-lambda": "^8.10.157",
 		"@types/jest": "^29.5.14",
 		"@types/node": "22.7.9",

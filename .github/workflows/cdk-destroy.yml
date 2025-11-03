@@ -1,0 +1,59 @@
+name: CDK Destroy
+
+on:
+  # Manual trigger via GitHub UI
+  workflow_dispatch:
+
+concurrency:
+  group: cdk-destroy-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  destroy:
+    name: CDK Destroy (dev)
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      id-token: write
+
+    environment:
+      name: DEV
+
+    env:
+      APP_ENV: dev
+      AWS_REGION: ${{ secrets.AWS_REGION }}
+      AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      # Same bundling step you use in the deploy workflow
+      - name: Bundle code to minified assets
+        run: npm run ci:build
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: CDK Destroy
+        run: |
+          npx cdk destroy --all --force \
+            -c env=${APP_ENV} \
+            -c stage=${APP_ENV} \
+            -c region=${AWS_REGION}

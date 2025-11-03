@@ -1,7 +1,7 @@
 'use strict';
 const http = require('../utils/http');
 const fetch = require('node-fetch');
-const { generateTransactionId } = require('../utils/transactionID');
+const { generateTransactionId } = require('../utils/transactionID.js');
 const DEBUG_MODE = process.env.DEBUG_MODE === 'true';
 
 const DOWNSTREAM_URL = process.env.DOWNSTREAM_URL;

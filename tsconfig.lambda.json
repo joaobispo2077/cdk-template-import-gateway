@@ -2,8 +2,12 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "lambda-dist",
-    "module": "ES2020",           // lets esbuild tree-shake better
-    "types": ["aws-lambda"]
+    "module": "ES2020",
+    "types": ["aws-lambda"],
+    "allowJs": true,         // inclui .js no programa
+    "checkJs": false,        // não type-check em .js
+    "declaration": false     // evita .d.ts para esse build
   },
-  "include": ["src/**/*.ts"]
+  "include": ["src/**/*"],
+  "exclude": ["tests/**", "**/*.spec.ts", "**/*.test.ts"]
 }
